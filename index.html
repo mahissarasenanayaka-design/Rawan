@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAWAN TEA | Legendary Pure Ceylon Tea</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            950: '#06130E',
+                            900: '#0B2017',
+                            800: '#133326',
+                            700: '#1C4937',
+                            600: '#28634C',
+                        },
+                        gold: {
+                            400: '#F3E5AB',
+                            500: '#E5C158',
+                            600: '#D4AF37',
+                            700: '#AA820A',
+                            800: '#7C5E03',
+                        },
+                        cream: '#FDFBF7',
+                        sand: '#F4ECE1',
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #06130E;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1C4937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0BD 0%, #D4AF37 50%, #997406 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(19, 51, 38, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+        }
+
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card-hover:hover {
+            transform: translateY(-6px);
+            border-color: rgba(212, 175, 55, 0.45);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .gold-btn {
+            background: linear-gradient(135deg, #E5C158 0%, #D4AF37 100%);
+            color: #06130E;
+            transition: all 0.3s ease;
+        }
+
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #FFF0BD 0%, #E5C158 100%);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-emerald-950 text-sand font-sans overflow-x-hidden selection:bg-gold-600 selection:text-emerald-950">
+
+    <div class="bg-gradient-to-r from-emerald-900 via-gold-700 to-emerald-900 text-cream text-xs text-center py-2 px-4 font-medium tracking-wider flex justify-center items-center gap-2 border-b border-gold-600/30">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-400"></i>
+        <span>WORLDWIDE EXPRESS SHIPPING | 100% SINGLE ORIGIN HIGH-GROWN CEYLON TEA</span>
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-400"></i>
+    </div>
+
+    <header id="navbar" class="sticky top-0 z-40 transition-all duration-300 bg-emerald-950/80 backdrop-blur-md border-b border-gold-600/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-gold-500/50 bg-emerald-900 flex items-center justify-center shadow-lg group-hover:border-gold-400 transition-colors">
+                    <i data-lucide="crown" class="w-5 h-5 text-gold-500 group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-cinzel text-2xl font-black tracking-widest gold-gradient-text">RAWAN</span>
+                    <span class="text-[9px] tracking-[0.3em] text-gold-500/80 uppercase font-semibold -mt-1">Tea Heritage</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex items-center space-x-7 font-medium text-xs tracking-wider text-sand/80 uppercase">
+                <a href="#about" class="hover:text-gold-400 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Our Legend</a>
+                <a href="#collections" class="hover:text-gold-400 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Collections</a>
+                <a href="#gift-builder" class="hover:text-gold-400 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Gift Box</a>
+                <a href="#estates" class="hover:text-gold-400 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Estates</a>
+                <button onclick="openTasteQuiz()" class="hover:text-gold-400 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all uppercase">Flavor Finder</button>
+                <a href="#brew-timer" class="hover:text-gold-400 transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Brew Timer</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <!-- Currency Switcher -->
+                <div class="relative">
+                    <select id="currency-select" onchange="changeCurrency(this.value)" class="bg-emerald-900/90 border border-gold-600/30 text-gold-400 text-xs font-semibold rounded-full px-3 py-1.5 focus:outline-none focus:border-gold-400 cursor-pointer shadow-sm">
+                        <option value="USD">USD ($)</option>
+                        <option value="LKR">LKR (Rs)</option>
+                        <option value="EUR">EUR (€)</option>
+                        <option value="GBP">GBP (£)</option>
+                    </select>
+                </div>
+
+                <!-- Cart Button -->
+                <button onclick="toggleCart()" class="relative p-2.5 rounded-full bg-emerald-900/80 border border-gold-600/30 text-gold-400 hover:text-sand hover:border-gold-500 transition-all flex items-center justify-center">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 w-5 h-5 bg-gold-500 text-emerald-950 font-bold text-xs rounded-full flex items-center justify-center border-2 border-emerald-950">0</span>
+                </button>
+
+                <!-- Order Button -->
+                <a href="#collections" class="hidden sm:inline-flex px-5 py-2.5 rounded-full font-semibold text-xs tracking-wider uppercase gold-btn shadow-lg">
+                    Shop Royal Blends
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-sand hover:text-gold-400">
+                    <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-emerald-950/95 border-b border-gold-600/20 px-6 py-6 space-y-4 font-medium text-sm">
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-sand hover:text-gold-400 py-1">OUR LEGEND</a>
+            <a href="#collections" onclick="toggleMobileMenu()" class="block text-sand hover:text-gold-400 py-1">COLLECTIONS</a>
+            <a href="#gift-builder" onclick="toggleMobileMenu()" class="block text-sand hover:text-gold-400 py-1">CUSTOM GIFT BOX</a>
+            <a href="#estates" onclick="toggleMobileMenu()" class="block text-sand hover:text-gold-400 py-1">ESTATES</a>
+            <button onclick="toggleMobileMenu(); openTasteQuiz();" class="block w-full text-left text-sand hover:text-gold-400 py-1 uppercase">FLAVOR FINDER</button>
+            <a href="#brew-timer" onclick="toggleMobileMenu()" class="block text-sand hover:text-gold-400 py-1">BREW TIMER</a>
+            <a href="#collections" onclick="toggleMobileMenu()" class="inline-block w-full text-center py-3 rounded-full font-semibold text-xs tracking-wider uppercase gold-btn">
+                Shop Royal Blends
+            </a>
+        </div>
+    </header>
+
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 px-4">
+        <!-- Steam & Particle Canvas Effect -->
+        <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-60"></canvas>
+        
+        <!-- Glowing background aura -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-700/20 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-gold-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10 space-y-8">
+            
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-gold-500/30 text-gold-400 text-xs tracking-widest uppercase font-semibold">
+                <i data-lucide="award" class="w-4 h-4 text-gold-500"></i>
+                <span>Royal Standard Single Origin Ceylon</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="font-cinzel text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-sand leading-tight">
+                THE LEGEND OF <br>
+                <span class="gold-gradient-text font-black">PURE CEYLON TEA</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="max-w-2xl mx-auto text-sand/80 text-base sm:text-lg font-light leading-relaxed font-playfair italic">
+                Hand-picked from the misty royal heights of Nuwara Eliya and Ella. Experience rich, golden aromas crafted for tea connoisseurs worldwide.
+            </p>
+
+            <!-- CTA Group -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#collections" class="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-sm tracking-wider uppercase gold-btn shadow-2xl flex items-center justify-center gap-2 group">
+                    <span>Explore Royal Blends</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <button onclick="openTasteQuiz()" class="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-sm tracking-wider uppercase glass-card hover:bg-emerald-900/60 border-gold-500/30 text-sand hover:text-gold-400 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="compass" class="w-4 h-4 text-gold-500"></i>
+                    <span>Find Your Match</span>
+                </button>
+            </div>
+
+            <!-- Quick Trust Badges -->
+            <div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-gold-600/10 text-xs font-medium text-sand/70">
+                <div class="flex items-center justify-center gap-2">
+                    <i data-lucide="mountain" class="w-4 h-4 text-gold-500"></i>
+                    <span>High Altitude (1,850m+)</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i data-lucide="leaf" class="w-4 h-4 text-gold-500"></i>
+                    <span>100% Pure Organic</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i data-lucide="sun" class="w-4 h-4 text-gold-500"></i>
+                    <span>Artisanal Hand-Picked</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-gold-500"></i>
+                    <span>Ceylon Certified</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-12 bg-emerald-900/40 border-y border-gold-600/15 relative">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="space-y-1">
+                <div class="font-cinzel text-3xl md:text-4xl font-bold gold-gradient-text flex justify-center items-center">
+                    <span class="stat-num" data-target="100">0</span>%
+                </div>
+                <div class="text-xs uppercase tracking-wider text-sand/70">Pure Ceylon Origin</div>
+            </div>
+            <div class="space-y-1">
+                <div class="font-cinzel text-3xl md:text-4xl font-bold gold-gradient-text flex justify-center items-center">
+                    <span class="stat-num" data-target="1850">0</span>m
+                </div>
+                <div class="text-xs uppercase tracking-wider text-sand/70">High-Grown Elevation</div>
+            </div>
+            <div class="space-y-1">
+                <div class="font-cinzel text-3xl md:text-4xl font-bold gold-gradient-text flex justify-center items-center">
+                    <span class="stat-num" data-target="28">0</span>+
+                </div>
+                <div class="text-xs uppercase tracking-wider text-sand/70">Global Export Countries</div>
+            </div>
+            <div class="space-y-1">
+                <div class="font-cinzel text-3xl md:text-4xl font-bold gold-gradient-text flex justify-center items-center">
+                    <span class="stat-num" data-target="15000">0</span>+
+                </div>
+                <div class="text-xs uppercase tracking-wider text-sand/70">Tea Connoisseurs</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-4 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- Left Visual Card Grid -->
+            <div class="relative grid grid-cols-2 gap-4">
+                <div class="space-y-4">
+                    <div class="rounded-2xl overflow-hidden glass-card p-2 border-gold-500/20">
+                        <div class="h-64 sm:h-72 rounded-xl bg-gradient-to-br from-emerald-800 to-emerald-950 flex flex-col items-center justify-center p-6 text-center border border-gold-500/20 relative group">
+                            <i data-lucide="crown" class="w-12 h-12 text-gold-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                            <h4 class="font-cinzel font-bold text-lg text-sand">Royal Lineage</h4>
+                            <p class="text-xs text-sand/70 mt-2 font-light">Inspired by the legendary heritage of King Rawan's ancient mystical cloud forests.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4 pt-8">
+                    <div class="rounded-2xl overflow-hidden glass-card p-2 border-gold-500/20">
+                        <div class="h-64 sm:h-72 rounded-xl bg-gradient-to-br from-emerald-900 to-emerald-950 flex flex-col items-center justify-center p-6 text-center border border-gold-500/20 relative group">
+                            <i data-lucide="cloud-fog" class="w-12 h-12 text-gold-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                            <h4 class="font-cinzel font-bold text-lg text-sand">Misty Peak Estates</h4>
+                            <p class="text-xs text-sand/70 mt-2 font-light">Nurtured by Ceylon's morning mist, pure rain, and pristine high-altitude soil.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Text Story -->
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 text-gold-400 text-xs uppercase tracking-widest font-semibold">
+                    <span class="w-8 h-[1px] bg-gold-500"></span>
+                    <span>The Rawan Heritage</span>
+                </div>
+
+                <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-sand leading-tight">
+                    Crafted From The <br>
+                    <span class="gold-gradient-text">Heart of Sri Lanka</span>
+                </h2>
+
+                <p class="text-sand/80 text-base leading-relaxed font-light">
+                    RAWAN TEA is born from the untouched, high-altitude estates of Sri Lanka. Named after the legendary king who ruled over these emerald mountain peaks, our tea leaves are hand-picked at dawn when the morning dew preserves their delicate essential oils.
+                </p>
+
+                <div class="space-y-4 pt-2">
+                    <div class="flex items-start gap-4 p-4 rounded-xl glass-card border border-gold-500/10">
+                        <div class="p-2 rounded-lg bg-gold-500/10 text-gold-400 shrink-0">
+                            <i data-lucide="sparkle" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sand text-sm">Two Leaves and a Bud</h4>
+                            <p class="text-xs text-sand/70 font-light mt-0.5">Only the tender top leaves are selected to ensure unmatched smoothness, amber clarity, and zero bitterness.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 p-4 rounded-xl glass-card border border-gold-500/10">
+                        <div class="p-2 rounded-lg bg-gold-500/10 text-gold-400 shrink-0">
+                            <i data-lucide="gem" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sand text-sm">Artisanal Small-Batch Processing</h4>
+                            <p class="text-xs text-sand/70 font-light mt-0.5">Traditional orthodox rolling methods handed down through generations of master tea blenders.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <a href="#collections" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gold-500/40 text-gold-400 hover:bg-gold-500/10 text-xs font-semibold uppercase tracking-wider transition-all">
+                        <span>Discover Our Blends</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="collections" class="py-24 px-4 bg-emerald-950 relative">
+        <div class="max-w-7xl mx-auto space-y-12">
+            
+            <div class="text-center space-y-4 max-w-2xl mx-auto">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Exquisite Selection</span>
+                <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-sand">
+                    THE ROYAL <span class="gold-gradient-text">COLLECTION</span>
+                </h2>
+                <p class="text-sand/70 text-sm font-light">
+                    From bold single-origin black teas to aromatic spice infusions, explore our hand-crafted luxury tea range.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3">
+                <button onclick="filterTea('all')" class="tea-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-gold-600 text-emerald-950 shadow-md" data-filter="all">
+                    All Blends
+                </button>
+                <button onclick="filterTea('black')" class="tea-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all glass-card text-sand/80 hover:text-gold-400 border-gold-500/20" data-filter="black">
+                    Black Tea
+                </button>
+                <button onclick="filterTea('green')" class="tea-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all glass-card text-sand/80 hover:text-gold-400 border-gold-500/20" data-filter="green">
+                    Green Tea
+                </button>
+                <button onclick="filterTea('chai')" class="tea-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all glass-card text-sand/80 hover:text-gold-400 border-gold-500/20" data-filter="chai">
+                    Royal Spice & Chai
+                </button>
+                <button onclick="filterTea('herbal')" class="tea-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all glass-card text-sand/80 hover:text-gold-400 border-gold-500/20" data-filter="herbal">
+                    Herbal & White
+                </button>
+            </div>
+
+            <!-- Product Grid Container -->
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Rendered dynamically by JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <section id="gift-builder" class="py-24 px-4 bg-gradient-to-b from-emerald-950 via-emerald-900/40 to-emerald-950 border-t border-gold-600/15 relative">
+        <div class="max-w-7xl mx-auto space-y-12">
+            
+            <div class="text-center space-y-4 max-w-2xl mx-auto">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-widest">
+                    <i data-lucide="gift" class="w-3.5 h-3.5"></i> Custom Bespoke Experience
+                </span>
+                <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-sand">
+                    BUILD YOUR <span class="gold-gradient-text">ROYAL GIFT BOX</span>
+                </h2>
+                <p class="text-sand/70 text-sm font-light">
+                    Select your tin finish, curate 3 signature tea tins, and personalize with custom gold foil engraving.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Customization Controls -->
+                <div class="lg:col-span-7 space-y-8 glass-card p-6 sm:p-8 rounded-3xl border-gold-500/30">
+                    
+                    <!-- Step 1: Tin Finish -->
+                    <div class="space-y-3">
+                        <label class="block text-xs uppercase font-bold text-gold-400 tracking-wider">Step 1: Choose Royal Tin Finish</label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <button onclick="setGiftTinColor('gold', 'Imperial Gold')" class="tin-color-btn p-3 rounded-xl border border-gold-500 bg-gold-500/20 text-center text-xs font-semibold text-sand transition-all">
+                                Imperial Gold
+                            </button>
+                            <button onclick="setGiftTinColor('emerald', 'Emerald Forest')" class="tin-color-btn p-3 rounded-xl border border-gold-500/20 bg-emerald-900/60 text-center text-xs font-semibold text-sand/80 hover:border-gold-500 transition-all">
+                                Emerald Forest
+                            </button>
+                            <button onclick="setGiftTinColor('obsidian', 'Obsidian Velvet')" class="tin-color-btn p-3 rounded-xl border border-gold-500/20 bg-emerald-950 text-center text-xs font-semibold text-sand/80 hover:border-gold-500 transition-all">
+                                Obsidian Velvet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Pick 3 Teas -->
+                    <div class="space-y-3">
+                        <label class="block text-xs uppercase font-bold text-gold-400 tracking-wider">Step 2: Select 3 Blends (<span id="gift-selection-count">0</span>/3 Selected)</label>
+                        <div id="gift-tea-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Engraving -->
+                    <div class="space-y-3">
+                        <label class="block text-xs uppercase font-bold text-gold-400 tracking-wider">Step 3: Gold Engraving (Optional)</label>
+                        <input id="gift-engraving-input" type="text" maxlength="25" oninput="updateEngravingText(this.value)" placeholder="e.g. Crafted for Lord Rawan" class="w-full px-4 py-3 rounded-xl bg-emerald-950/80 border border-gold-500/30 text-sand text-xs focus:outline-none focus:border-gold-400">
+                    </div>
+
+                </div>
+
+                <!-- Right Realtime Preview Box -->
+                <div class="lg:col-span-5 glass-card p-8 rounded-3xl border-gold-500/40 text-center space-y-6 lg:sticky lg:top-28">
+                    <div id="gift-box-preview-container" class="relative h-56 rounded-2xl border border-gold-500/30 bg-gradient-to-br from-gold-600/20 via-emerald-900/80 to-emerald-950 flex flex-col items-center justify-center p-6 shadow-2xl transition-all">
+                        <i data-lucide="crown" class="w-12 h-12 text-gold-400 mb-2"></i>
+                        <span class="font-cinzel text-xl font-bold gold-gradient-text tracking-widest">RAWAN ROYAL BOX</span>
+                        <span id="preview-tin-label" class="text-[10px] text-gold-400 uppercase tracking-widest mt-1">Finish: Imperial Gold</span>
+                        <div id="preview-engraving-text" class="italic text-xs font-playfair text-sand/90 mt-3 border-t border-gold-500/20 pt-2 min-h-[28px]">"Crafted for Royal Connoisseurs"</div>
+                    </div>
+
+                    <div class="space-y-2 text-left text-xs text-sand/80 border-t border-gold-600/15 pt-4">
+                        <div class="font-semibold text-sand mb-1">Selected Tea Blends:</div>
+                        <ul id="gift-selected-list" class="space-y-1 text-sand/60">
+                            <li class="italic">Please select 3 blends...</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-sand/60 uppercase block">Set Price</span>
+                            <span id="gift-box-price" class="font-cinzel text-2xl font-bold gold-gradient-text">$65.00</span>
+                        </div>
+                        <button onclick="addGiftBoxToCart()" class="px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider gold-btn shadow-lg flex items-center gap-2">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add Gift Set
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="estates" class="py-24 px-4 bg-emerald-950 relative border-t border-gold-600/15">
+        <div class="max-w-7xl mx-auto space-y-12">
+            
+            <div class="text-center space-y-4 max-w-2xl mx-auto">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Single Origin Terroir</span>
+                <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-sand">
+                    THE ROYAL <span class="gold-gradient-text">ESTATES</span>
+                </h2>
+                <p class="text-sand/70 text-sm font-light">
+                    Explore the pristine high-altitude regions of Sri Lanka where RAWAN tea leaves are cultivated.
+                </p>
+            </div>
+
+            <!-- Region Tabs -->
+            <div class="flex flex-wrap justify-center gap-3">
+                <button onclick="switchEstate('nuwara')" class="estate-tab-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-gold-600 text-emerald-950 shadow-md" data-estate="nuwara">Nuwara Eliya (1,850m)</button>
+                <button onclick="switchEstate('ella')" class="estate-tab-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all glass-card text-sand/80 hover:text-gold-400 border-gold-500/20" data-estate="ella">Ella & Uva (1,500m)</button>
+                <button onclick="switchEstate('dimbula')" class="estate-tab-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all glass-card text-sand/80 hover:text-gold-400 border-gold-500/20" data-estate="dimbula">Dimbula Valley (1,400m)</button>
+            </div>
+
+            <!-- Display Card -->
+            <div id="estate-display-card" class="glass-card p-8 sm:p-12 rounded-3xl border-gold-500/30 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <!-- Populated via JS -->
+            </div>
+
+        </div>
+    </section>
+
+    <section id="brew-timer" class="py-24 px-4 bg-emerald-950 relative">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="space-y-6">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Master The Steep</span>
+                <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-sand">
+                    ROYAL BREWING <br>
+                    <span class="gold-gradient-text">STOPWATCH</span>
+                </h2>
+                <p class="text-sand/70 text-sm font-light leading-relaxed">
+                    A perfect cup of Ceylon tea requires exact water temperature and steep duration. Select your tea blend below and start the live countdown.
+                </p>
+
+                <div class="space-y-3">
+                    <button onclick="setBrewPreset('black', 240, 95)" class="brew-preset-btn w-full p-4 rounded-xl glass-card border-gold-500/30 flex items-center justify-between text-left hover:border-gold-500 transition-all">
+                        <div>
+                            <h4 class="font-bold text-sand text-sm">Ceylon Black Tea</h4>
+                            <p class="text-xs text-sand/60">Steep: 4 Mins | Temp: 95°C / 203°F</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-gold-400"></i>
+                    </button>
+
+                    <button onclick="setBrewPreset('green', 150, 80)" class="brew-preset-btn w-full p-4 rounded-xl glass-card border-gold-500/20 flex items-center justify-between text-left hover:border-gold-500 transition-all">
+                        <div>
+                            <h4 class="font-bold text-sand text-sm">Royal Green Tea</h4>
+                            <p class="text-xs text-sand/60">Steep: 2.5 Mins | Temp: 80°C / 176°F</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-gold-400"></i>
+                    </button>
+
+                    <button onclick="setBrewPreset('chai', 300, 100)" class="brew-preset-btn w-full p-4 rounded-xl glass-card border-gold-500/20 flex items-center justify-between text-left hover:border-gold-500 transition-all">
+                        <div>
+                            <h4 class="font-bold text-sand text-sm">RAWAN Spice Chai</h4>
+                            <p class="text-xs text-sand/60">Steep: 5 Mins | Temp: 100°C / 212°F</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-gold-400"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Timer Circle Display -->
+            <div class="glass-card p-8 sm:p-12 rounded-3xl border-gold-500/30 flex flex-col items-center justify-center text-center space-y-8 relative">
+                
+                <div class="relative w-64 h-64 flex items-center justify-center">
+                    <!-- SVG Circular Progress -->
+                    <svg class="w-full h-full transform -rotate-90">
+                        <circle cx="128" cy="128" r="110" stroke="rgba(212, 175, 55, 0.1)" stroke-width="10" fill="transparent" />
+                        <circle id="timer-progress" cx="128" cy="128" r="110" stroke="#D4AF37" stroke-width="10" fill="transparent" stroke-dasharray="691" stroke-dashoffset="0" stroke-linecap="round" class="transition-all duration-1000 ease-linear" />
+                    </svg>
+
+                    <div class="absolute inset-0 flex flex-col items-center justify-center space-y-1">
+                        <span id="timer-display" class="font-cinzel text-5xl font-black gold-gradient-text tracking-wider">04:00</span>
+                        <span id="timer-label" class="text-xs font-semibold text-gold-400 tracking-widest uppercase">Ceylon Black Tea</span>
+                        <span id="temp-label" class="text-[10px] text-sand/60">Water Temp: 95°C</span>
+                    </div>
+                </div>
+
+                <!-- Timer Controls -->
+                <div class="flex items-center gap-4">
+                    <button id="start-timer-btn" onclick="toggleTimer()" class="px-8 py-3 rounded-full font-bold text-xs tracking-wider uppercase gold-btn flex items-center gap-2 shadow-xl">
+                        <i data-lucide="play" class="w-4 h-4"></i>
+                        <span id="timer-btn-text">Start Steeping</span>
+                    </button>
+                    <button onclick="resetTimer()" class="p-3 rounded-full glass-card border-gold-500/30 text-sand hover:text-gold-400 transition-colors">
+                        <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="sustainability" class="py-24 px-4 bg-emerald-900/20 relative border-t border-gold-600/10">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <div class="text-center space-y-4 max-w-2xl mx-auto">
+                <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold">Ethical Ceylon Luxury</span>
+                <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-sand">
+                    SUSTAINABLE <span class="gold-gradient-text">HERITAGE</span>
+                </h2>
+                <p class="text-sand/70 text-sm font-light">
+                    Every leaf of RAWAN TEA empowers hand-pickers, protects biodiversity, and honors traditional artisanal tea making.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="glass-card p-8 rounded-2xl border-gold-500/20 glass-card-hover space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400">
+                        <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-cinzel font-bold text-lg text-sand">Fair Trade Empowered</h3>
+                    <p class="text-xs text-sand/70 leading-relaxed font-light">
+                        Direct trade model that guarantees fair wages, medical support, and education funds for our female tea plucking communities in Ella.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-gold-500/20 glass-card-hover space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400">
+                        <i data-lucide="sprout" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-cinzel font-bold text-lg text-sand">100% Biodegradable Silk</h3>
+                    <p class="text-xs text-sand/70 leading-relaxed font-light">
+                        Our luxury pyramid teabags are crafted from plant-based cornstarch fiber, completely plastic-free and compostable.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-gold-500/20 glass-card-hover space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-cinzel font-bold text-lg text-sand">Pesticide Free Clean Tea</h3>
+                    <p class="text-xs text-sand/70 leading-relaxed font-light">
+                        Strict European Union purity standards ensuring zero artificial colors, synthetic pesticides, or chemical enhancements.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 px-4 bg-emerald-950">
+        <div class="max-w-6xl mx-auto space-y-12">
+            <div class="text-center space-y-2">
+                <div class="flex justify-center gap-1 text-gold-400">
+                    <i data-lucide="star" class="w-5 h-5 fill-gold-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-gold-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-gold-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-gold-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-gold-400"></i>
+                </div>
+                <h3 class="font-cinzel text-2xl sm:text-3xl font-bold text-sand">CONNOISSEUR PRAISE</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl border-gold-500/10 space-y-4 text-xs font-light text-sand/80">
+                    <p class="italic">"RAWAN Tea's Nuwara Eliya Pekoe is simply world class. The bright golden liquor and subtle floral aroma take me straight back to Sri Lanka's tea hills."</p>
+                    <div class="font-semibold text-gold-400 font-sans uppercase tracking-wider text-[11px]">— Arthur Pendelton, London</div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl border-gold-500/10 space-y-4 text-xs font-light text-sand/80">
+                    <p class="italic">"The Royal Cinnamon Chai is unlike any commercial chai. Real authentic Ceylon spices with rich single-origin black tea base. Outstanding!"</p>
+                    <div class="font-semibold text-gold-400 font-sans uppercase tracking-wider text-[11px]">— Dr. Maya Lin, Singapore</div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl border-gold-500/10 space-y-4 text-xs font-light text-sand/80">
+                    <p class="italic">"The luxury tin packaging makes for a perfect royal gift. Ordering from Australia was seamless and shipping was incredibly quick."</p>
+                    <div class="font-semibold text-gold-400 font-sans uppercase tracking-wider text-[11px]">— Liam Vance, Melbourne</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wholesale & Newsletter Section -->
+    <section class="py-20 px-4 bg-gradient-to-t from-emerald-900/60 to-emerald-950 border-t border-gold-600/15">
+        <div class="max-w-4xl mx-auto glass-card p-8 sm:p-12 rounded-3xl border-gold-500/30 text-center space-y-6">
+            <i data-lucide="mail" class="w-10 h-10 text-gold-400 mx-auto"></i>
+            <h2 class="font-cinzel text-2xl sm:text-4xl font-bold text-sand">
+                JOIN THE <span class="gold-gradient-text">RAWAN CLUB</span>
+            </h2>
+            <p class="text-sand/70 text-xs sm:text-sm font-light max-w-xl mx-auto">
+                Subscribe to receive private seasonal flush announcements, secret tea recipes, and 15% off your first royal order.
+            </p>
+
+            <form onsubmit="handleSubscribe(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" required placeholder="Enter your email address" class="px-5 py-3.5 rounded-full bg-emerald-950/80 border border-gold-500/30 text-sand text-xs focus:outline-none focus:border-gold-400 flex-grow">
+                <button type="submit" class="px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider gold-btn shrink-0">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-950 border-t border-gold-600/20 text-sand/70 text-xs py-16 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gold-600/10">
+            
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full border border-gold-500/50 bg-emerald-900 flex items-center justify-center">
+                        <i data-lucide="crown" class="w-4 h-4 text-gold-500"></i>
+                    </div>
+                    <span class="font-cinzel text-xl font-bold gold-gradient-text">RAWAN TEA</span>
+                </div>
+                <p class="text-sand/60 font-light leading-relaxed">
+                    Sri Lanka’s luxury Ceylon tea brand. Direct from single-origin high-altitude estates to your cup.
+                </p>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="font-cinzel font-bold text-sand text-sm tracking-wider uppercase">Collections</h4>
+                <ul class="space-y-2 font-light">
+                    <li><a href="#collections" class="hover:text-gold-400 transition-colors">Nuwara Eliya Pekoe</a></li>
+                    <li><a href="#collections" class="hover:text-gold-400 transition-colors">Royal Spice Chai</a></li>
+                    <li><a href="#collections" class="hover:text-gold-400 transition-colors">Ella High-Grown Green</a></li>
+                    <li><a href="#collections" class="hover:text-gold-400 transition-colors">Silver Needle White Tea</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="font-cinzel font-bold text-sand text-sm tracking-wider uppercase">Experience</h4>
+                <ul class="space-y-2 font-light">
+                    <li><a href="#about" class="hover:text-gold-400 transition-colors">Our Legend</a></li>
+                    <li><a href="#brew-timer" class="hover:text-gold-400 transition-colors">Brewing Guide</a></li>
+                    <li><button onclick="openTasteQuiz()" class="hover:text-gold-400 transition-colors text-left">Flavor Finder Quiz</button></li>
+                    <li><a href="#sustainability" class="hover:text-gold-400 transition-colors">Ethics & Sustainability</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="font-cinzel font-bold text-sand text-sm tracking-wider uppercase">Headquarters</h4>
+                <div class="space-y-2 font-light text-sand/60">
+                    <p class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-gold-400"></i> RAWAN Tea Estate, Ella, Sri Lanka</p>
+                    <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-gold-400"></i> +94 77 123 4567</p>
+                    <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-gold-400"></i> royal@rawantea.com</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sand/50 text-[11px]">
+            <div>&copy; 2026 RAWAN TEA (PVT) LTD. All Rights Reserved. Pure Ceylon Tea Board Certified.</div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-gold-400">Privacy Policy</a>
+                <a href="#" class="hover:text-gold-400">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0 flex items-center justify-center p-4">
+        <div onclick="closeQuickView()" class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+        <div id="quick-view-content" class="relative z-10 w-full max-w-2xl glass-card rounded-3xl border-gold-500/40 p-6 sm:p-8 bg-emerald-950/95 max-h-[90vh] overflow-y-auto">
+            <!-- Dynamic Content -->
+        </div>
+    </div>
+
+    <!-- Flavor Finder Quiz Modal -->
+    <div id="taste-quiz-modal" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0 flex items-center justify-center p-4">
+        <div onclick="closeTasteQuiz()" class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+        <div class="relative z-10 w-full max-w-lg glass-card rounded-3xl border-gold-500/40 p-6 sm:p-8 bg-emerald-950/95 space-y-6">
+            <button onclick="closeTasteQuiz()" class="absolute top-4 right-4 p-2 text-sand/60 hover:text-gold-400">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="text-center space-y-2">
+                <i data-lucide="compass" class="w-8 h-8 text-gold-400 mx-auto"></i>
+                <h3 class="font-cinzel text-2xl font-bold text-sand">FLAVOR FINDER</h3>
+                <p class="text-xs text-sand/70 font-light">Answer 3 questions to uncover your ideal Ceylon Tea match.</p>
+            </div>
+
+            <div class="space-y-4 text-xs">
+                <div>
+                    <label class="block text-gold-400 font-bold uppercase mb-2">1. Preferred Tea Strength?</label>
+                    <select id="quiz-strength" class="w-full p-3 rounded-xl bg-emerald-900 border border-gold-500/30 text-sand">
+                        <option value="bold">Bold & Robust</option>
+                        <option value="medium">Medium & Aromatic</option>
+                        <option value="delicate">Light & Delicate</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-gold-400 font-bold uppercase mb-2">2. Ideal Drinking Time?</label>
+                    <select id="quiz-time" class="w-full p-3 rounded-xl bg-emerald-900 border border-gold-500/30 text-sand">
+                        <option value="morning">Morning Kickstart</option>
+                        <option value="afternoon">Afternoon Refreshment</option>
+                        <option value="evening">Evening Relaxation</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-gold-400 font-bold uppercase mb-2">3. Primary Flavor Profile?</label>
+                    <select id="quiz-flavor" class="w-full p-3 rounded-xl bg-emerald-900 border border-gold-500/30 text-sand">
+                        <option value="spicy">Rich Spiced & Warm</option>
+                        <option value="floral">Crisp Floral & Citrus</option>
+                        <option value="herbal">Fresh Herbal & Clean</option>
+                    </select>
+                </div>
+
+                <button onclick="calculateQuizResult()" class="w-full py-3.5 rounded-full font-bold uppercase tracking-wider gold-btn shadow-lg">
+                    Discover My Tea
+                </button>
+            </div>
+
+            <div id="quiz-result" class="hidden p-4 rounded-2xl border border-gold-500/30 bg-emerald-900/50 text-center space-y-2">
+                <!-- Result Populated Here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Sliding Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
+        <div onclick="toggleCart()" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div id="cart-panel" class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-emerald-950 border-l border-gold-600/30 p-6 flex flex-col justify-between shadow-2xl transition-transform duration-300 translate-x-full">
+            
+            <div class="flex items-center justify-between pb-4 border-b border-gold-600/20">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="shopping-bag" class="w-5 h-5 text-gold-400"></i>
+                    <h3 class="font-cinzel font-bold text-lg text-sand">YOUR ROYAL CART</h3>
+                </div>
+                <button onclick="toggleCart()" class="p-2 text-sand/60 hover:text-gold-400">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div id="cart-items-container" class="flex-grow overflow-y-auto py-4 space-y-4">
+                <!-- Cart items rendered by JS -->
+            </div>
+
+            <div class="pt-4 border-t border-gold-600/20 space-y-4">
+                <div class="flex items-center justify-between text-sm">
+                    <span class="text-sand/70">Subtotal</span>
+                    <span id="cart-subtotal" class="font-cinzel font-bold text-lg gold-gradient-text">$0.00</span>
+                </div>
+                <p class="text-[11px] text-sand/50">Taxes & shipping calculated at checkout. Free shipping over $50.</p>
+                <button onclick="checkout()" class="w-full py-3.5 rounded-full font-bold text-xs uppercase tracking-wider gold-btn flex items-center justify-center gap-2 shadow-xl">
+                    <i data-lucide="lock" class="w-4 h-4"></i>
+                    Proceed to Royal Checkout
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 glass-card border border-gold-500/40 px-5 py-3.5 rounded-full flex items-center gap-3 shadow-2xl pointer-events-none">
+        <i data-lucide="check-circle-2" class="w-5 h-5 text-gold-400"></i>
+        <span id="toast-message" class="text-xs font-medium text-sand">Item added to cart!</span>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        const currencies = {
+            USD: { symbol: '$', rate: 1 },
+            LKR: { symbol: 'Rs. ', rate: 300 },
+            EUR: { symbol: '€', rate: 0.92 },
+            GBP: { symbol: '£', rate: 0.78 }
+        };
+        let currentCurrency = 'USD';
+
+        const products = [
+            {
+                id: 'rawan-pekoe',
+                name: 'Nuwara Eliya Pekoe',
+                category: 'black',
+                price: 24.50,
+                rating: 5.0,
+                elevation: '1,850 Meters',
+                image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80',
+                desc: 'Delicate single-origin leaf with bright golden infusion and subtle floral undertones.',
+                badge: 'Best Seller'
+            },
+            {
+                id: 'royal-chai',
+                name: 'Royal Spice Chai',
+                category: 'chai',
+                price: 22.00,
+                rating: 4.9,
+                elevation: '1,200 Meters',
+                image: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=600&q=80',
+                desc: 'Rich Ceylon black tea infused with hand-crushed cardamom, clove, and cinnamon.',
+                badge: 'Artisanal'
+            },
+            {
+                id: 'ella-green',
+                name: 'Ella Cloud Forest Green',
+                category: 'green',
+                price: 26.00,
+                rating: 4.8,
+                elevation: '1,600 Meters',
+                image: 'https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?auto=format&fit=crop&w=600&q=80',
+                desc: 'Hand-pan-fired green tea leaves preserving fresh grassy aroma and rich antioxidants.',
+                badge: 'Organic'
+            },
+            {
+                id: 'silver-needle',
+                name: 'Silver Needle White Tea',
+                category: 'herbal',
+                price: 34.00,
+                rating: 5.0,
+                elevation: '1,900 Meters',
+                image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80',
+                desc: 'Unopened velvet buds plucked during first spring dawn. Silky, subtle floral notes.',
+                badge: 'Limited Reserve'
+            },
+            {
+                id: 'earl-grey-royal',
+                name: 'Royal Earl Grey Imperial',
+                category: 'black',
+                price: 23.50,
+                rating: 4.9,
+                elevation: '1,500 Meters',
+                image: 'https://images.unsplash.com/photo-1563911892437-1f1032824399?auto=format&fit=crop&w=600&q=80',
+                desc: 'Pure high-grown black tea scented with authentic Italian Bergamot essential oils.',
+                badge: 'Classic'
+            },
+            {
+                id: 'lemongrass-ginger',
+                name: 'Ceylon Lemongrass & Ginger',
+                category: 'herbal',
+                price: 21.00,
+                rating: 4.7,
+                elevation: '800 Meters',
+                image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80',
+                desc: 'Caffeine-free soothing blend of freshly cut tropical lemongrass and fiery dried ginger.',
+                badge: 'Caffeine Free'
+            }
+        ];
+
+        let cart = [];
+
+        function formatPrice(valInUSD) {
+            const cur = currencies[currentCurrency];
+            return `${cur.symbol}${(valInUSD * cur.rate).toFixed(2)}`;
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toast-message');
+            if (toast && msgEl) {
+                msgEl.innerText = msg;
+                toast.classList.remove('opacity-0', 'translate-y-20', 'pointer-events-none');
+                setTimeout(() => {
+                    toast.classList.add('opacity-0', 'translate-y-20', 'pointer-events-none');
+                }, 3000);
+            }
+        }
+
+        function changeCurrency(code) {
+            currentCurrency = code;
+            renderProducts();
+            updateCartUI();
+            updateGiftBoxPrice();
+            showToast(`Switched currency to ${code}`);
+        }
+
+        function renderProducts(filter = 'all') {
+            const grid = document.getElementById('product-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            const filteredProducts = filter === 'all' 
+                ? products 
+                : products.filter(p => p.category === filter);
+
+            filteredProducts.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'glass-card rounded-2xl overflow-hidden border-gold-500/20 glass-card-hover flex flex-col justify-between';
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-56 overflow-hidden bg-emerald-900/50">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" onerror="this.src='https://placehold.co/600x400/0B2017/E5C158?text=RAWAN+TEA'">
+                            <span class="absolute top-3 right-3 bg-emerald-950/80 backdrop-blur-md border border-gold-500/30 text-gold-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                                ${product.badge}
+                            </span>
+                            <button onclick="openQuickView('${product.id}')" class="absolute bottom-3 right-3 p-2 rounded-full bg-emerald-950/80 border border-gold-500/30 text-gold-400 hover:text-sand text-xs transition-colors">
+                                <i data-lucide="eye" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[11px] text-gold-400/80 font-medium tracking-wider uppercase flex items-center gap-1">
+                                    <i data-lucide="mountain" class="w-3.5 h-3.5"></i> ${product.elevation}
+                                </span>
+                                <div class="flex items-center text-xs text-gold-400 gap-1 font-bold">
+                                    <i data-lucide="star" class="w-3.5 h-3.5 fill-gold-400"></i> ${product.rating}
+                                </div>
+                            </div>
+
+                            <h3 class="font-cinzel font-bold text-lg text-sand">${product.name}</h3>
+                            <p class="text-xs text-sand/70 font-light leading-relaxed line-clamp-2">${product.desc}</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 flex items-center justify-between border-t border-gold-600/10 mt-4">
+                        <span class="font-cinzel text-xl font-bold gold-gradient-text">${formatPrice(product.price)}</span>
+                        <button onclick="addToCart('${product.id}')" class="px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider gold-btn flex items-center gap-1.5 shadow-md">
+                            <i data-lucide="plus" class="w-4 h-4"></i> Add To Cart
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        function filterTea(category) {
+            document.querySelectorAll('.tea-filter-btn').forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.className = 'tea-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-gold-600 text-emerald-950 shadow-md';
+                } else {
+                    btn.className = 'tea-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all glass-card text-sand/80 hover:text-gold-400 border-gold-500/20';
+                }
+            });
+            renderProducts(category);
+        }
+
+        let selectedGiftTeas = [];
+        let giftTinFinish = 'Imperial Gold';
+        let giftEngraving = '';
+
+        function setGiftTinColor(type, label) {
+            giftTinFinish = label;
+            const labelEl = document.getElementById('preview-tin-label');
+            if (labelEl) labelEl.innerText = `Finish: ${label}`;
+            
+            const container = document.getElementById('gift-box-preview-container');
+            if (container) {
+                if(type === 'gold') {
+                    container.className = 'relative h-56 rounded-2xl border border-gold-500/30 bg-gradient-to-br from-gold-600/20 via-emerald-900/80 to-emerald-950 flex flex-col items-center justify-center p-6 shadow-2xl transition-all';
+                } else if(type === 'emerald') {
+                    container.className = 'relative h-56 rounded-2xl border border-emerald-500/40 bg-gradient-to-br from-emerald-800/40 via-emerald-900 to-emerald-950 flex flex-col items-center justify-center p-6 shadow-2xl transition-all';
+                } else {
+                    container.className = 'relative h-56 rounded-2xl border border-gray-600/40 bg-gradient-to-br from-gray-900 via-black to-emerald-950 flex flex-col items-center justify-center p-6 shadow-2xl transition-all';
+                }
+            }
+
+            document.querySelectorAll('.tin-color-btn').forEach(btn => {
+                if(btn.innerText.includes(label)) {
+                    btn.classList.add('border-gold-500', 'bg-gold-500/20');
+                } else {
+                    btn.classList.remove('border-gold-500', 'bg-gold-500/20');
+                }
+            });
+        }
+
+        function toggleGiftTeaSelect(id) {
+            const idx = selectedGiftTeas.indexOf(id);
+            if(idx > -1) {
+                selectedGiftTeas.splice(idx, 1);
+            } else {
+                if(selectedGiftTeas.length >= 3) {
+                    showToast("Maximum 3 blends allowed in a gift box!");
+                    return;
+                }
+                selectedGiftTeas.push(id);
+            }
+            renderGiftTeaOptions();
+            updateGiftBoxPreview();
+        }
+
+        function renderGiftTeaOptions() {
+            const container = document.getElementById('gift-tea-options');
+            if(!container) return;
+            container.innerHTML = '';
+
+            products.forEach(p => {
+                const isSelected = selectedGiftTeas.includes(p.id);
+                const btn = document.createElement('button');
+                btn.onclick = () => toggleGiftTeaSelect(p.id);
+                btn.className = `p-3 rounded-xl border text-left text-xs transition-all flex items-center justify-between ${
+                    isSelected ? 'border-gold-500 bg-gold-500/20 text-sand' : 'border-gold-500/20 bg-emerald-900/40 text-sand/70 hover:border-gold-500/50'
+                }`;
+                btn.innerHTML = `
+                    <span class="font-bold truncate">${p.name}</span>
+                    <i data-lucide="${isSelected ? 'check-circle-2' : 'plus'}" class="w-4 h-4 text-gold-400 shrink-0"></i>
+                `;
+                container.appendChild(btn);
+            });
+            const countEl = document.getElementById('gift-selection-count');
+            if(countEl) countEl.innerText = selectedGiftTeas.length;
+            lucide.createIcons();
+        }
+
+        function updateEngravingText(val) {
+            giftEngraving = val;
+            const el = document.getElementById('preview-engraving-text');
+            if(el) el.innerText = val.trim() ? `"${val}"` : `"Crafted for Royal Connoisseurs"`;
+        }
+
+        function updateGiftBoxPreview() {
+            const list = document.getElementById('gift-selected-list');
+            if(!list) return;
+            if(selectedGiftTeas.length === 0) {
+                list.innerHTML = '<li class="italic">Please select 3 blends...</li>';
+            } else {
+                list.innerHTML = selectedGiftTeas.map(id => {
+                    const p = products.find(x => x.id === id);
+                    return `<li class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-gold-400"></i> ${p.name}</li>`;
+                }).join('');
+            }
+            lucide.createIcons();
+        }
+
+        function updateGiftBoxPrice() {
+            const priceEl = document.getElementById('gift-box-price');
+            if(priceEl) priceEl.innerText = formatPrice(65.00);
+        }
+
+        function addGiftBoxToCart() {
+            if(selectedGiftTeas.length < 3) {
+                showToast("Please select 3 tea blends for your custom box!");
+                return;
+            }
+            const customItem = {
+                id: 'custom-gift-box-' + Date.now(),
+                name: `Royal Gift Set (${giftTinFinish})`,
+                price: 65.00,
+                quantity: 1,
+                image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80'
+            };
+            cart.push(customItem);
+            updateCartUI();
+            showToast("Custom Royal Gift Box added to cart!");
+        }
+
+        const estatesData = {
+            nuwara: {
+                title: "Nuwara Eliya High Peaks",
+                altitude: "1,850 - 2,100 Meters",
+                climate: "Cool mist, alpine crisp air, rich soil",
+                signature: "Light, exquisite golden infusion with natural floral aromas.",
+                image: "https://images.unsplash.com/photo-1586325194227-7625ed95172b?auto=format&fit=crop&w=800&q=80",
+                teaMatch: "Nuwara Eliya Pekoe"
+            },
+            ella: {
+                title: "Ella & Uva Mystical Valley",
+                altitude: "1,400 - 1,600 Meters",
+                climate: "Dry winds and tropical monsoon mist",
+                signature: "Exotic spicy undertones, medium body, deep amber glow.",
+                image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80",
+                teaMatch: "Royal Spice Chai"
+            },
+            dimbula: {
+                title: "Dimbula Golden Slopes",
+                altitude: "1,200 - 1,500 Meters",
+                climate: "Slight southwest monsoon rainfall",
+                signature: "Full-bodied, mellow flavor with pleasant reddish-orange clarity.",
+                image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
+                teaMatch: "Royal Earl Grey Imperial"
+            }
+        };
+
+        function switchEstate(key) {
+            document.querySelectorAll('.estate-tab-btn').forEach(btn => {
+                if(btn.dataset.estate === key) {
+                    btn.className = 'estate-tab-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-gold-600 text-emerald-950 shadow-md';
+                } else {
+                    btn.className = 'estate-tab-btn px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all glass-card text-sand/80 hover:text-gold-400 border-gold-500/20';
+                }
+            });
+
+            const data = estatesData[key];
+            const card = document.getElementById('estate-display-card');
+            if(!card) return;
+            card.innerHTML = `
+                <div class="space-y-4">
+                    <span class="text-xs text-gold-400 uppercase tracking-widest font-semibold flex items-center gap-1.5">
+                        <i data-lucide="mountain" class="w-4 h-4"></i> Elevation: ${data.altitude}
+                    </span>
+                    <h3 class="font-cinzel text-2xl sm:text-3xl font-bold text-sand">${data.title}</h3>
+                    <p class="text-xs text-sand/70 font-light leading-relaxed"><strong class="text-sand">Micro-Climate:</strong> ${data.climate}</p>
+                    <p class="text-xs text-sand/70 font-light leading-relaxed"><strong class="text-sand">Flavor Signature:</strong> ${data.signature}</p>
+                    <div class="pt-2">
+                        <span class="inline-block px-4 py-2 rounded-full border border-gold-500/30 text-gold-400 text-xs font-bold uppercase">
+                            Featured Harvest: ${data.teaMatch}
+                        </span>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 border border-gold-500/30">
+                    <img src="${data.image}" class="w-full h-full object-cover">
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
+        let timerInterval = null;
+        let totalSeconds = 240;
+        let remainingSeconds = 240;
+        let isRunning = false;
+
+        function setBrewPreset(type, seconds, temp) {
+            resetTimer();
+            totalSeconds = seconds;
+            remainingSeconds = seconds;
+            
+            const labelMap = {
+                black: 'Ceylon Black Tea',
+                green: 'Royal Green Tea',
+                chai: 'RAWAN Spice Chai'
+            };
+
+            const labelEl = document.getElementById('timer-label');
+            const tempEl = document.getElementById('temp-label');
+            if(labelEl) labelEl.innerText = labelMap[type] || 'Ceylon Tea';
+            if(tempEl) tempEl.innerText = `Water Temp: ${temp}°C`;
+
+            updateTimerDisplay();
+        }
+
+        function toggleTimer() {
+            if (isRunning) {
+                clearInterval(timerInterval);
+                isRunning = false;
+                document.getElementById('timer-btn-text').innerText = 'Resume';
+            } else {
+                isRunning = true;
+                document.getElementById('timer-btn-text').innerText = 'Pause';
+                timerInterval = setInterval(() => {
+                    remainingSeconds--;
+                    updateTimerDisplay();
+
+                    if (remainingSeconds <= 0) {
+                        clearInterval(timerInterval);
+                        isRunning = false;
+                        document.getElementById('timer-btn-text').innerText = 'Completed';
+                        showToast("Steeping Complete! Enjoy your Royal Tea.");
+                        playChimeSound();
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            remainingSeconds = totalSeconds;
+            const btnText = document.getElementById('timer-btn-text');
+            if(btnText) btnText.innerText = 'Start Steeping';
+            updateTimerDisplay();
+        }
+
+        function updateTimerDisplay() {
+            const mins = Math.floor(remainingSeconds / 60);
+            const secs = remainingSeconds % 60;
+            const displayEl = document.getElementById('timer-display');
+            if(displayEl) displayEl.innerText = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+            const progressCircle = document.getElementById('timer-progress');
+            if(progressCircle) {
+                const totalDash = 691;
+                const offset = totalDash - (remainingSeconds / totalSeconds) * totalDash;
+                progressCircle.style.strokeDashoffset = offset;
+            }
+        }
+
+        function playChimeSound() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+                const ctx = new AudioContext();
+                const now = ctx.currentTime;
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(523.25, now);
+                osc.frequency.exponentialRampToValueAtTime(1046.50, now + 0.8);
+                
+                gain.gain.setValueAtTime(0.3, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+                
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                
+                osc.start(now);
+                osc.stop(now + 1.2);
+            } catch(e) {
+                console.log("Audio feedback", e);
+            }
+        }
+
+        function openQuickView(id) {
+            const p = products.find(x => x.id === id);
+            if(!p) return;
+
+            const modal = document.getElementById('quick-view-modal');
+            const content = document.getElementById('quick-view-content');
+
+            content.innerHTML = `
+                <button onclick="closeQuickView()" class="absolute top-4 right-4 p-2 text-sand/60 hover:text-gold-400">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <img src="${p.image}" class="w-full h-64 object-cover rounded-2xl border border-gold-500/30">
+                    
+                    <div class="space-y-4">
+                        <span class="text-[10px] text-gold-400 font-bold uppercase tracking-widest px-3 py-1 bg-gold-500/10 rounded-full border border-gold-500/30">
+                            ${p.badge}
+                        </span>
+                        <h3 class="font-cinzel text-2xl font-bold text-sand">${p.name}</h3>
+                        <p class="text-xs text-sand/70 leading-relaxed font-light">${p.desc}</p>
+
+                        <div class="space-y-2 border-t border-gold-600/20 pt-3">
+                            <div class="text-[11px] font-bold text-gold-400 uppercase">Tasting Profile:</div>
+                            
+                            <div class="space-y-1 text-xs">
+                                <div class="flex justify-between text-sand/70"><span>Aroma Intensity</span><span>5 / 5</span></div>
+                                <div class="w-full h-1.5 bg-emerald-900 rounded-full overflow-hidden"><div class="h-full bg-gold-500 w-[100%]"></div></div>
+
+                                <div class="flex justify-between text-sand/70"><span>Body & Strength</span><span>4 / 5</span></div>
+                                <div class="w-full h-1.5 bg-emerald-900 rounded-full overflow-hidden"><div class="h-full bg-gold-500 w-[80%]"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-3 border-t border-gold-600/20">
+                            <span class="font-cinzel text-2xl font-bold gold-gradient-text">${formatPrice(p.price)}</span>
+                            <button onclick="addToCart('${p.id}'); closeQuickView();" class="px-6 py-2.5 rounded-full font-bold text-xs uppercase gold-btn">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            lucide.createIcons();
+        }
+
+        function closeQuickView() {
+            const modal = document.getElementById('quick-view-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('pointer-events-none'), 300);
+        }
+
+        function openTasteQuiz() {
+            const modal = document.getElementById('taste-quiz-modal');
+            if(modal) modal.classList.remove('pointer-events-none', 'opacity-0');
+        }
+
+        function closeTasteQuiz() {
+            const modal = document.getElementById('taste-quiz-modal');
+            if(modal) {
+                modal.classList.add('opacity-0');
+                setTimeout(() => modal.classList.add('pointer-events-none'), 300);
+            }
+        }
+
+        function calculateQuizResult() {
+            const flavor = document.getElementById('quiz-flavor').value;
+            let match = products[0];
+
+            if (flavor === 'spicy') match = products.find(p => p.id === 'royal-chai');
+            else if (flavor === 'floral') match = products.find(p => p.id === 'silver-needle') || products[0];
+            else if (flavor === 'herbal') match = products.find(p => p.id === 'lemongrass-ginger');
+
+            const resDiv = document.getElementById('quiz-result');
+            resDiv.innerHTML = `
+                <div class="text-xs uppercase font-bold text-gold-400">Your Recommended Match</div>
+                <div class="font-cinzel text-lg font-bold text-sand">${match.name}</div>
+                <p class="text-[11px] text-sand/70 font-light">${match.desc}</p>
+                <button onclick="addToCart('${match.id}'); closeTasteQuiz();" class="mt-2 px-4 py-2 rounded-full gold-btn text-xs font-bold uppercase">
+                    Add ${formatPrice(match.price)} To Cart
+                </button>
+            `;
+            resDiv.classList.remove('hidden');
+        }
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            const panel = document.getElementById('cart-panel');
+            if (!drawer || !panel) return;
+
+            if (drawer.classList.contains('opacity-0')) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+                panel.classList.remove('translate-x-full');
+            } else {
+                panel.classList.add('translate-x-full');
+                drawer.classList.add('opacity-0');
+                setTimeout(() => drawer.classList.add('pointer-events-none'), 300);
+            }
+        }
+
+        function addToCart(productId) {
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                const prod = products.find(p => p.id === productId);
+                if (prod) {
+                    cart.push({ ...prod, quantity: 1 });
+                }
+            }
+            updateCartUI();
+            showToast("Added to your Royal Cart!");
+        }
+
+        function updateCartQty(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function removeCartItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const countEl = document.getElementById('cart-count');
+            const container = document.getElementById('cart-items-container');
+            const subtotalEl = document.getElementById('cart-subtotal');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            if(countEl) countEl.innerText = totalItems;
+
+            if (!container) return;
+            container.innerHTML = '';
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 space-y-3 text-sand/50">
+                        <i data-lucide="shopping-bag" class="w-10 h-10 mx-auto opacity-40"></i>
+                        <p class="text-xs">Your Royal Cart is empty.</p>
+                    </div>
+                `;
+            } else {
+                cart.forEach((item, index) => {
+                    const itemEl = document.createElement('div');
+                    itemEl.className = 'flex items-center gap-4 p-3 rounded-xl glass-card border-gold-500/20';
+                    itemEl.innerHTML = `
+                        <img src="${item.image}" class="w-14 h-14 object-cover rounded-lg">
+                        <div class="flex-grow min-w-0">
+                            <h4 class="font-cinzel text-xs font-bold text-sand truncate">${item.name}</h4>
+                            <span class="text-xs text-gold-400 font-bold">${formatPrice(item.price)}</span>
+                            <div class="flex items-center gap-2 mt-1">
+                                <button onclick="updateCartQty(${index}, -1)" class="w-5 h-5 rounded bg-emerald-900 border border-gold-500/30 text-sand flex items-center justify-center text-xs">-</button>
+                                <span class="text-xs font-bold text-sand">${item.quantity}</span>
+                                <button onclick="updateCartQty(${index}, 1)" class="w-5 h-5 rounded bg-emerald-900 border border-gold-500/30 text-sand flex items-center justify-center text-xs">+</button>
+                            </div>
+                        </div>
+                        <button onclick="removeCartItem(${index})" class="text-sand/40 hover:text-gold-400 p-1">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    `;
+                    container.appendChild(itemEl);
+                });
+            }
+
+            const subtotalUSD = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            if(subtotalEl) subtotalEl.innerText = formatPrice(subtotalUSD);
+
+            lucide.createIcons();
+        }
+
+        function checkout() {
+            if(cart.length === 0) {
+                showToast("Your cart is empty!");
+                return;
+            }
+            showToast("Redirecting to Royal Express Checkout...");
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if(menu) menu.classList.toggle('hidden');
+        }
+
+        function handleSubscribe(e) {
+            e.preventDefault();
+            showToast("Welcome to the RAWAN Club!");
+            e.target.reset();
+        }
+
+        function initHeroCanvas() {
+            const canvas = document.getElementById('hero-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            function resize() {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const particles = [];
+            for (let i = 0; i < 35; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 2.5 + 0.8,
+                    speedY: Math.random() * 0.4 + 0.2,
+                    speedX: (Math.random() - 0.5) * 0.3,
+                    alpha: Math.random() * 0.5 + 0.2,
+                    gold: Math.random() > 0.4
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.y -= p.speedY;
+                    p.x += p.speedX;
+
+                    if (p.y < -10) {
+                        p.y = canvas.height + 10;
+                        p.x = Math.random() * canvas.width;
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = p.gold 
+                        ? `rgba(212, 175, 55, ${p.alpha})` 
+                        : `rgba(244, 236, 225, ${p.alpha * 0.6})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        window.addEventListener('load', () => {
+            renderProducts();
+            switchEstate('nuwara');
+            renderGiftTeaOptions();
+            updateGiftBoxPrice();
+            initHeroCanvas();
+
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                gsap.utils.toArray('h2').forEach(heading => {
+                    gsap.from(heading, {
+                        scrollTrigger: {
+                            trigger: heading,
+                            start: 'top 85%'
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 1,
+                        ease: 'power2.out'
+                    });
+                });
+
+                gsap.utils.toArray('.stat-num').forEach(num => {
+                    const target = parseFloat(num.getAttribute('data-target'));
+                    gsap.to(num, {
+                        scrollTrigger: {
+                            trigger: num,
+                            start: 'top 90%'
+                        },
+                        innerText: target,
+                        duration: 2,
+                        snap: { innerText: 1 },
+                        ease: 'power1.out'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
